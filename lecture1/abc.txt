@@ -1,0 +1,13 @@
+1.what is JavaScript ??
+ans. JavaScript is a programming language used to create dynamic content for websites
+
+// JavaScript is a loosely typed language
+// We can declare a variable without specifying its type
+// Java Script is dynamacially typed language
+// We can change the type of variable at runtime
+
+
+let var const
+i.var: Variable can be re-declared & updated.A global scope variable
+ii.let:variable cannot be re-declared but can ne updated. A block scope variable
+iii,const Variable cannot be re-declared. A block scope variable
