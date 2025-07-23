@@ -1,4 +1,4 @@
-// console.log(x); // 7
+ // console.log(x); // 7
 // getName(); // Subham Kumar
 // console.log(getName)
 // var x=7;
