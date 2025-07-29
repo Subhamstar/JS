@@ -7,12 +7,42 @@
 </head>
 <body>
 
-    <div id="root"></div>
+    <div id="root">
+        <!-- <h1 id="title">Hello World</h1>
+        <h1 id="title">Hello World</h1>
+        <h1 id="title">Hello World</h1>
+        <h1 id="title">Hello World</h1>
+        <h1 id="title">Hello World</h1>
+        <h1 id="title">Hello World</h1>
+        <h1 id="title">Hello World</h1> -->
+        Not Rendered
+    </div>
+
+    <div id="container">
+        <h1>Heading 1</h1>
+        <h1>Heading 2</h1>
+    </div>
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
 <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
 
 <script>
-    const heading =React.createElement("h1",{},"SincosTani💝");
+    const heading =React.createElement(
+        "h1",
+        {  // props 
+            id:"title"
+        },
+        "SincosTani🪴  :--1 "
+    );
+    const heading1 =React.createElement(
+        "h2",
+        {  // props 
+            id:"title"
+        },
+        "SincosTani🪴  :--2 "
+    );
+    const container =React.createElement("div",{
+        id:container
+    },[heading,heading1])
     const root=ReactDOM.createRoot(document.getElementById("root"));
     root.render(heading);
 
