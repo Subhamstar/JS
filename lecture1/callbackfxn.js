@@ -34,16 +34,32 @@
 // }
 // x();
 
-function x(){
-    // var i=10;
-    for(var i=1;i<=5;i++){
-        function close(i){
-            setTimeout(function(){
-                console.log(i);// here i is closers
-            },i*1000)
-        }
-        close(i);
-    }
-    // console.log("Hello");
+// function x(){
+//     // var i=10;
+//     for(var i=1;i<=5;i++){
+//         function close(i){
+//             setTimeout(function(){
+//                 console.log(i);// here i is closers
+//             },i*1000)
+//         }
+//         close(i);
+//     }
+//     // console.log("Hello");
+// }
+// x();
+
+
+
+
+// callback Function 
+// ---->> callback function passed an argument to another function and it executeted latter after some operation completes or under certain execution
+
+
+function hello(name,callback){
+    console.log("Hii",name);
+    callback();
 }
-x();
+var hi=function(){
+    console.log("Bye Bye  !!");
+}
+hello("Subham",hi);

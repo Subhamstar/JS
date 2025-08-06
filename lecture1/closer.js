@@ -1,3 +1,16 @@
+function x(){
+    var a=7;
+    function y(){
+        console.log(a);
+    }
+    y();
+}
+x();
+// A closure is a feature in JavaScript where a function "remembers" the variables from its lexical scope,even if the function is executed outside that scop
+
+
+
+
 // function  x(){
 //     var a=7;
 //     function y(){
