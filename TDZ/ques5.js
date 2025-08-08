@@ -26,13 +26,35 @@
 
 
 
-//question4
+//question4   Promises 
 
-async function getData() {
-    return 2;
-}
+// async function getData() {
+//     return 2;
+// }
+// console.log("A");
+// console.log("B");
+// setTimeout(()=>console.log("C"),5*1000);
+// getData().then(()=>{console.log("I got the data")});
+// console.log("D");
+
+
+
+
+
+
+
+//Question 5:  API
+
+API="https://official-joke-api.appspot.com/jokes/random/9"
 console.log("A");
 console.log("B");
 setTimeout(()=>console.log("C"),5*1000);
-getData().then(()=>{console.log("I got the data")});
+fetch(API)
+  .then(res => res.json()) // Convert response to JSON
+  .then(jokes => {
+    jokes.forEach(joke => {
+      console.log(`${joke.setup} - ${joke.punchline}`);
+    });
+  })
+ .catch(err => console.error("Error fetching jokes:", err))
 console.log("D");
