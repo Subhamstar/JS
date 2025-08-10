@@ -55,4 +55,5 @@ const obj={
         console.log(this);
     },
 };
+
 obj.x();
