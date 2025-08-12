@@ -20,4 +20,4 @@ var obj1 = {
    
 var getAddress = obj1.getAddress;
 var obj2 = {name:"akshay"};
-obj2.getAddress();    
+obj2.getAddress();    //this gives error 
