@@ -7,4 +7,4 @@ function debounce(func, delay) {
 }
 
 const log = debounce(() => console.log("Typing..."), 1000);
-log(); log(); log();
+log(); log(); log(); // // Only last one executes after 1 sec
