@@ -8,5 +8,8 @@ function multiplier(x) {
   };
 }
 
-const double = multiplier(2);
-console.log(double(5));  
+// const double = multiplier(2);
+// console.log(double(5));  
+
+
+console.log(multiplier(8)(3));
