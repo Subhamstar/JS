@@ -27,4 +27,6 @@ handleSearch("He");
 handleSearch("Hel");
 handleSearch("Hell");
 handleSearch("Hello"); 
+handleSearch("Helloo");
+handleSearch("Hellooo");   // the onlt last call was called
 // Only last call "Hello" executes after 1 second
