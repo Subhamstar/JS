@@ -55,11 +55,30 @@
 // ---->> callback function passed an argument to another function and it executeted latter after some operation completes or under certain execution
 
 
-function hello(name,callback){
-    console.log("Hii",name);
-    callback();
+// function hello(name,callback){
+//     console.log("Hii",name);
+//     callback();
+// }
+// var hi=function(){
+//     console.log("Bye Bye  !!");
+// }
+// hello("Subham",hi);
+
+
+//callback is function passeed is a argument another function   \\
+function sum(a,b){
+    console.log(a+b);
 }
-var hi=function(){
-    console.log("Bye Bye  !!");
+
+function calculate(a,b,sumcall){
+    sumcall(a,b);
 }
-hello("Subham",hi);
+sum(4,6,sum);
+
+
+
+
+
+
+
+l
