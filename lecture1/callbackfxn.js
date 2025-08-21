@@ -76,9 +76,3 @@ function calculate(a,b,sumcall){
 sum(4,6,sum);
 
 
-
-
-
-
-
-l
