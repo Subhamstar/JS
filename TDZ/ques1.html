@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz App</title>
+  <style>
+    body {
+      user-select: none;
+    }
+    * {
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Quiz App</h1>
+  <button id="startQuiz">Start Quiz</button>
+  <p id="warning"></p>
+
+  <script>
+    let tabSwitchCount = 0;
+    let quizRunning = false;
+
+    function openFullscreen() {
+      let elem = document.documentElement;
+      if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+      } else if (elem.mozRequestFullScreen) { // Firefox
+        elem.mozRequestFullScreen();
+      } else if (elem.webkitRequestFullscreen) { // Chrome, Safari, Opera
+        elem.webkitRequestFullscreen();
+      } else if (elem.msRequestFullscreen) { // IE/Edge
+        elem.msRequestFullscreen();
+      }
+    }
+
+    function endQuiz() {
+      quizRunning = false;
+      document.exitFullscreen?.();
+      alert("🚨 Quiz ended automatically due to multiple tab switches!");
+      document.getElementById("warning").textContent =
+        "❌ Quiz ended (You switched tabs too many times)";
+      // Here you can also auto-submit answers to server
+    }
+
+    // Detect fullscreen exit
+    document.addEventListener("fullscreenchange", () => {
+      if (!document.fullscreenElement && quizRunning) {
+        alert("⚠️ You exited fullscreen. Quiz may be submitted!");
+      }
+    });
+
+    // Detect tab switch
+    document.addEventListener("visibilitychange", () => {
+      if (quizRunning && document.hidden) {
+        tabSwitchCount++;
+        document.getElementById("warning").textContent =
+          "⚠️ You switched tabs " + tabSwitchCount + " times!";
+        console.log("User switched tabs: " + tabSwitchCount);
+
+        if (tabSwitchCount >= 4) {
+          endQuiz();
+        }
+      }
+    });
+
+    // Disable right-click
+    document.addEventListener("contextmenu", (e) => e.preventDefault());
+
+    // Start quiz
+    document.getElementById("startQuiz").addEventListener("click", () => {
+      openFullscreen();
+      tabSwitchCount = 0;
+      quizRunning = true;
+      document.getElementById("warning").textContent = "";
+      console.log("Quiz Started in Fullscreen Mode");
+    });
+  </script>
+</body>
+</html>
