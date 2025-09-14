@@ -1,0 +1,2 @@
+Local Storage keeps data permanently until cleared, across tabs/windows.
+Session Storage keeps data only for one browser tab and is cleared when the tab is closed.
